@@ -72,3 +72,25 @@
         console.log(e.item.name + 'が click された');
     };
 </app3>
+
+<app4>
+    <!-- レイアウト -->
+    <h1>Form</h1>
+    
+    <form onsubmit='{submit}'>
+        <input type='text' name='username' />
+        <input type='password' name='password' />
+        <button type='submit' name='submit'>login</button>
+    </form>
+    
+    // ロジック
+    this.on('mount', function() { // mount実行時にイベント追加
+        this.username.value = 'shinsuke';
+        this.password.value = 'hogefuga';
+    });
+    
+    this.submit = function() {
+        console.log("username: ", this.username.value);
+        console.log("password: ", this.password.value);
+    };
+</app4>
