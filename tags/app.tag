@@ -40,3 +40,29 @@
         }
     ];
 </app2>
+
+<app3>
+    <h1>Event Handlers</h1>
+    
+    <button onclick='{click}'>click</button>
+    
+    <ul>
+        <li each='{list}'>
+            <button onclick='{clickItem}'>{name}</button>
+        </li>
+    </ul>
+    
+    this.list = [
+        {name: 'hoge'},
+        {name: 'foo'},
+        {name: 'bar'},
+    ];
+    
+    this.click = function() {
+        console.log('click された');
+    };
+    
+    this.clickItem = function(e) {
+        console.log(e.item.name + 'が click された');
+    };
+</app3>
