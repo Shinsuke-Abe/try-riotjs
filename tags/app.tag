@@ -1,4 +1,5 @@
 // mixin
+// オブジェクト
 var OptsMixin = {
     // 特殊メソッド(riotの仕様？ミックスインしたタグ生成時に実行される)
     init: function() {
@@ -19,6 +20,15 @@ var OptsMixin = {
         return this
     }
 }
+
+// 関数
+function IdMixin() {
+    this.getId = function() {
+        return this._id
+    }
+}
+
+var id_mixin_instance = new IdMixin()
 
 <app>
     <!-- レイアウト -->
@@ -143,6 +153,6 @@ var OptsMixin = {
     </style>
     
     // ロジック
-    this.mixin(OptsMixin);
+    this.mixin(OptsMixin, id_mixin_instance);
     this.title = opts.title; // タグ指定時の引数
 </app6>
