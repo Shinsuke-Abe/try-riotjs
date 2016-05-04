@@ -110,3 +110,16 @@
         this.look = !this.look;
     }
 </app5>
+
+<app6>
+    <!-- レイアウト -->
+    <h1>{title}</h1>
+    <style scoped>
+        :scope h1 {
+            color: red;
+        }
+    </style>
+    
+    // ロジック
+    this.title = opts.title; // タグ指定時の引数
+</app6>
