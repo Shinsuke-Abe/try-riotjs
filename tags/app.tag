@@ -94,3 +94,19 @@
         console.log("password: ", this.password.value);
     };
 </app4>
+
+<app5>
+    <!-- レイアウト -->
+    <h1>if/show/hide</h1>
+    
+    <button onclick={toggle}>click</button>
+    <div if={look}> look </div>
+    <div show={look}> show </div>
+    <div hide={look}> hide </div>
+    
+    // ロジック
+    this.look = true;
+    this.toggle = function() {
+        this.look = !this.look;
+    }
+</app5>
