@@ -1,4 +1,5 @@
 <app>
+    <!-- レイアウト -->
     <h1>App1 expressions</h1>
     <ul>
         <li>{ name }</li>
@@ -8,11 +9,13 @@
         <li>{ Math.round(64.5) }</li>
     </ul>
     
+    // ロジック(scriptタグ省略。プリプロセッサを指定する場合は必要)
     this.name = 'my title';
     this.flag = true;
 </app>
 
 <app2>
+    <!-- レイアウト -->
     <h1>App2 loop</h1>
     <ul>
         <li each='{list}' class='{done:status}'>{ title }</li>
@@ -25,6 +28,7 @@
         }
     </style>
     
+    // ロジック(scriptタグ省略。プリプロセッサを指定する場合は必要)
     this.list = [
         {
             title: 'Hello world!',
@@ -42,6 +46,7 @@
 </app2>
 
 <app3>
+    <!-- レイアウト -->
     <h1>Event Handlers</h1>
     
     <button onclick='{click}'>click</button>
@@ -52,6 +57,7 @@
         </li>
     </ul>
     
+    // ロジック(scriptタグ省略。プリプロセッサを指定する場合は必要)
     this.list = [
         {name: 'hoge'},
         {name: 'foo'},
