@@ -4,6 +4,7 @@
 
 * master > Riot.jsのみ
 * add-webpack-trial > tagファイルをWebpackでビルドする
+** sass-riot-application-with-webpack > cssとtagのビルドのパスを整理する
 
 ## webpackでのビルドについて
 
