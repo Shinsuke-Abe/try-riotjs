@@ -1,9 +1,9 @@
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './entry.js',
+  entry: './apps/entry.js',
   output: {
-    //path: __dirname + '/public',
+    path: __dirname + '/public',
     filename: 'entry.bundle.js'
   },
   plugins: [
@@ -20,6 +20,6 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: '.'
+    contentBase: './public'
   }
 };
