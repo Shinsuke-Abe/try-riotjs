@@ -1,4 +1,4 @@
-console.log(require("./mixins.js"));
+require("./mixins.js");
 
 <app>
     <!-- レイアウト -->
