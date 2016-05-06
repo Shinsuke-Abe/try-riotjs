@@ -1,34 +1,4 @@
-// mixin
-// オブジェクト
-var OptsMixin = {
-    // 特殊メソッド(riotの仕様？ミックスインしたタグ生成時に実行される)
-    init: function() {
-      this.on('updated', function() { console.log('Updated!') })
-    },
-
-    getOpts: function() {
-        return this.opts
-    },
-
-    setOpts: function(opts, update) {
-        this.opts = opts
-
-        if(!update) {
-            this.update()
-        }
-
-        return this
-    }
-}
-
-// 関数
-function IdMixin() {
-    this.getId = function() {
-        return this._id
-    }
-}
-
-var id_mixin_instance = new IdMixin()
+console.log(require("./mixins.js"));
 
 <app>
     <!-- レイアウト -->
@@ -52,13 +22,6 @@ var id_mixin_instance = new IdMixin()
     <ul>
         <li each='{list}' class='{done:status}'>{ title }</li>
     </ul>
-    
-    <style>
-        li.done {
-            color: #aaa;
-            text-decoration: line-through;
-        }
-    </style>
     
     // ロジック(scriptタグ省略。プリプロセッサを指定する場合は必要)
     this.list = [
@@ -153,6 +116,6 @@ var id_mixin_instance = new IdMixin()
     </style>
     
     // ロジック
-    this.mixin(OptsMixin, id_mixin_instance);
+    this.mixin(exports.OptsMixin, exports.id_mixin_instance);
     this.title = opts.title; // タグ指定時の引数
 </app6>
