@@ -109,11 +109,7 @@ console.log(require("./mixins.js"));
 <app6>
     <!-- レイアウト -->
     <h1>{title}</h1>
-    <style scoped>
-        :scope h1 {
-            color: red;
-        }
-    </style>
+    require("../stylesheet/app6_tag.css");
     
     // ロジック
     this.mixin(exports.OptsMixin, exports.id_mixin_instance);
