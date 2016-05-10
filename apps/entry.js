@@ -1,4 +1,4 @@
-require("./stylesheet/main.css");
+require("./stylesheet/main.scss");
 
 require("./tags/app.tag");
 

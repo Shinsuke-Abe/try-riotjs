@@ -2628,8 +2628,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./main.css", function() {
-				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./main.css");
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./main.scss", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./../../../../../node_modules/sass-loader/index.js!./main.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2647,7 +2647,7 @@
 
 
 	// module
-	exports.push([module.id, "li.done {\n    color: #aaa;\n    text-decoration: line-through;\n}", ""]);
+	exports.push([module.id, "li.done {\n  color: #aaa;\n  text-decoration: line-through; }\n", ""]);
 
 	// exports
 
@@ -3026,10 +3026,11 @@
 	    };
 	});
 
-	riot.tag2('app6', '<h1>{title}</h1>', 'app6 h1,[riot-tag="app6"] h1,[data-is="app6"] h1{ color: red; }', '', function (opts) {
+	riot.tag2('app6', '<h1>{title}</h1>', '', '', function (opts) {
+	    __webpack_require__(9);
 
 	    // ロジック
-	    this.mixin(OptsMixin, id_mixin_instance);
+	    this.mixin(exports.OptsMixin, exports.id_mixin_instance);
 	    this.title = opts.title; // タグ指定時の引数
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -3040,7 +3041,7 @@
 
 	// mixin
 	// オブジェクト
-	var OptsMixin = {
+	exports.OptsMixin = {
 	    // 特殊メソッド(riotの仕様？ミックスインしたタグ生成時に実行される)
 	    init: function () {
 	        this.on('updated', function () {
@@ -3070,7 +3071,47 @@
 	    };
 	}
 
-	var id_mixin_instance = new IdMixin();
+	exports.id_mixin_instance = new IdMixin();
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(10);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(6)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../../node_modules/css-loader/index.js!./app6_tag.css", function() {
+				var newContent = require("!!./../../../../../node_modules/css-loader/index.js!./app6_tag.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(5)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "app6 h1 {\n    color: red;\n}", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);

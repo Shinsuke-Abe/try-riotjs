@@ -4,7 +4,7 @@ module.exports = {
   entry: './apps/entry.js',
   output: {
     path: __dirname + '/public',
-    filename: 'entry.bundle.js'
+    filename: 'bundle.js'
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -17,7 +17,8 @@ module.exports = {
     ],
     loaders: [
       { test: /\.js$|\.tag$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, loader: 'style-loader!css-loader'}
+      { test: /\.css$/, exclude: /node_modules/, loader: 'style-loader!css-loader'},
+      { test: /\.scss$/, exclude: /node_modules/, loader: 'style-loader!css-loader!sass-loader'}
     ]
   },
   devServer: {
